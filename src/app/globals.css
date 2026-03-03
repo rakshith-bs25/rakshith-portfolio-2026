@@ -2,22 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #f2f2f2;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #e5e5e5;
+    --accent: #333333;
+    --text-primary: #171717;
+    --text-secondary: #404040;
+  }
+
+  .dark,
+  .theme-purple {
+    --bg-primary: #111019;
+    --bg-surface: #1a1825;
+    --bg-surface-hover: #2a273b;
+    --accent: #c084fc;
+    --text-primary: #f3e8ff;
+    --text-secondary: #d8b4fe;
+  }
+
+  .theme-green {
+    --bg-primary: #0a140a;
+    --bg-surface: #112011;
+    --bg-surface-hover: #1c331c;
+    --accent: #4ade80;
+    --text-primary: #f0fdf4;
+    --text-secondary: #bbf7d0;
+  }
+
+  .theme-blue {
+    --bg-primary: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-surface-hover: #334155;
+    --accent: #60a5fa;
+    --text-primary: #f8fafc;
+    --text-secondary: #bfdbfe;
+  }
+
+  .theme-orange {
+    --bg-primary: #1a120b;
+    --bg-surface: #261b11;
+    --bg-surface-hover: #3b2a1a;
+    --accent: #fb923c;
+    --text-primary: #fff7ed;
+    --text-secondary: #fed7aa;
   }
 }
 
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  scrollbar-color: var(--text-secondary) var(--bg-primary);
+  /* Firefox */
+  scrollbar-width: thin;
+  /* Firefox */
+}
+
+/* Custom WebKit Scrollbar (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-secondary);
+  border: 3px solid var(--bg-primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(100, 255, 218, 0.3);
+  /* Accent color with opacity */
+  color: var(--text-primary);
 }
 
 @layer utilities {
