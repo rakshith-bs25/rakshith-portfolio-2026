@@ -101,7 +101,6 @@ export function Experience() {
                             >
                                 {activeRoles.map((roleData, index) => {
                                     const isLatest = index === 0;
-                                    const isMultiple = activeRoles.length > 1;
                                     const isLast = index === activeRoles.length - 1;
 
                                     return (
