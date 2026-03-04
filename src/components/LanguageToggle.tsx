@@ -1,18 +1,18 @@
 "use client"
 
 import * as React from "react"
+import { useLanguage } from "./LanguageProvider"
 
 export function LanguageToggle() {
-    // Default to English. German (DE) is just a stub for now.
-    const [lang, setLang] = React.useState("EN")
+    const { language, toggleLanguage } = useLanguage()
 
     return (
         <button
-            onClick={() => setLang(lang === "EN" ? "DE" : "EN")}
+            onClick={toggleLanguage}
             className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-bg-surface-hover hover:text-accent h-10 w-10 text-text-secondary font-mono"
             aria-label="Toggle language"
         >
-            {lang}
+            {language}
         </button>
     )
 }

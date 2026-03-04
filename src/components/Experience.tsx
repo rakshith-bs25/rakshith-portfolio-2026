@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "./LanguageProvider";
 
 const jobs = [
     {
@@ -40,6 +41,7 @@ const jobs = [
 ];
 
 export function Experience() {
+    const { language } = useLanguage();
     const [activeTab, setActiveTab] = useState(0);
 
     // Group jobs by company
@@ -67,7 +69,7 @@ export function Experience() {
             >
                 <div className="flex items-center mb-12">
                     <h2 className="text-3xl font-bold text-text-primary mr-6 whitespace-nowrap">
-                        Where I&apos;ve Worked
+                        {language === "DE" ? "Berufserfahrung" : "Where I've Worked"}
                     </h2>
                     <div className="h-[1px] bg-text-secondary/20 w-full sm:w-64 max-w-[300px]"></div>
                 </div>
@@ -89,54 +91,48 @@ export function Experience() {
                     </div>
 
                     <div className="md:w-full min-h-[300px]">
-                        <motion.div
-                            key={activeTab}
-                            initial={{ opacity: 0, x: 10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            {activeRoles.map((roleData, index) => {
-                                const isLatest = index === 0;
-                                const isMultiple = activeRoles.length > 1;
-                                const isLast = index === activeRoles.length - 1;
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={activeTab}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.25 }}
+                            >
+                                {activeRoles.map((roleData, index) => {
+                                    const isLatest = index === 0;
+                                    const isMultiple = activeRoles.length > 1;
+                                    const isLast = index === activeRoles.length - 1;
 
-                                return (
-                                    <div key={index} className={`relative ${!isLast ? "pb-12" : ""}`}>
-                                        {/* Timeline line connecting roles */}
-                                        {isMultiple && !isLast && (
-                                            <div className="absolute left-[5px] top-6 bottom-0 w-[2px] bg-text-secondary/20 hidden md:block"></div>
-                                        )}
-
-                                        {/* Timeline node */}
-                                        {isMultiple && (
-                                            <div className="absolute left-0 top-[10px] w-3 h-3 rounded-full border-2 border-bg-primary bg-text-secondary/50 hidden md:block"></div>
-                                        )}
-
-                                        <div className={isMultiple ? "md:pl-6" : ""}>
-                                            <h3 className={`text-xl font-medium mb-1 ${isLatest ? "text-accent" : "text-text-primary"}`}>
-                                                {roleData.role}
-                                                {isLatest && (
-                                                    <span className="text-accent">
-                                                        {" "}@ {roleData.company}
-                                                    </span>
-                                                )}
-                                            </h3>
-                                            <p className="text-sm font-mono text-text-secondary mb-4">
-                                                {roleData.date}
-                                            </p>
-                                            <ul className="space-y-3 text-text-secondary">
-                                                {roleData.description.map((desc, i) => (
-                                                    <li key={i} className="flex gap-2">
-                                                        <span className="text-accent mt-1">▹</span>
-                                                        <span className="leading-relaxed">{desc}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                    return (
+                                        <div key={index} className={`relative ${!isLast ? "pb-12" : ""}`}>
+                                            {/* Simplified continuous timeline border */}
+                                            <div className={`md:pl-6 relative border-l-2 border-text-secondary/20 hover:border-accent transition-colors duration-300 ml-[1px]`}>
+                                                <h3 className={`text-xl font-medium mb-1 ${isLatest ? "text-accent" : "text-text-primary"}`}>
+                                                    {roleData.role}
+                                                    {isLatest && (
+                                                        <span className="text-accent">
+                                                            {" "}@ {roleData.company}
+                                                        </span>
+                                                    )}
+                                                </h3>
+                                                <p className="text-sm font-mono text-text-secondary mb-4">
+                                                    {roleData.date}
+                                                </p>
+                                                <ul className="space-y-3 text-text-secondary">
+                                                    {roleData.description.map((desc, i) => (
+                                                        <li key={i} className="flex gap-2">
+                                                            <span className="text-accent mt-1">▹</span>
+                                                            <span className="leading-relaxed">{desc}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                );
-                            })}
-                        </motion.div>
+                                    );
+                                })}
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                 </div>
             </motion.div>

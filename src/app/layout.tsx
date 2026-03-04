@@ -8,6 +8,7 @@ import { SpotlightCursor } from "@/components/SpotlightCursor";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeCustomizer } from "@/components/ThemeCustomizer";
 import { ClientAnimationWrapper } from "@/components/ClientAnimationWrapper";
+import { LanguageProvider } from "@/components/LanguageProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,14 +37,16 @@ export default function RootLayout({
         {/* Pinned background for infinite scroll illusion */}
         <div className="fixed inset-0 z-[-1] bg-primary"></div>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem themes={['light', 'dark', 'theme-green', 'theme-blue', 'theme-orange']}>
-          <ClientAnimationWrapper>
-            <SpotlightCursor />
-            <TopNav />
-            <SideSocial />
-            <SideEmail />
-            {children}
-            <ThemeCustomizer />
-          </ClientAnimationWrapper>
+          <LanguageProvider>
+            <ClientAnimationWrapper>
+              <SpotlightCursor />
+              <TopNav />
+              <SideSocial />
+              <SideEmail />
+              {children}
+            </ClientAnimationWrapper>
+          </LanguageProvider>
+          <ThemeCustomizer />
         </ThemeProvider>
       </body>
     </html>

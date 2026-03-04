@@ -4,15 +4,20 @@ import React, { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 import { motion } from "framer-motion";
+import { useLanguage } from "./LanguageProvider";
 
-const navLinks = [
-    { name: "About", url: "#about" },
-    { name: "Experience", url: "#experience" },
-    { name: "Projects", url: "#projects" },
-    { name: "Contact", url: "#contact" },
+type LocalizedString = { EN: string; DE: string; };
+
+const navLinks: { name: LocalizedString; url: string }[] = [
+    { name: { EN: "About", DE: "Über mich" }, url: "#about" },
+    { name: { EN: "Experience", DE: "Berufserfahrung" }, url: "#experience" },
+    { name: { EN: "Education", DE: "Ausbildung" }, url: "#education" },
+    { name: { EN: "Projects", DE: "Projekte" }, url: "#projects" },
+    { name: { EN: "Contact", DE: "Kontakt" }, url: "#contact" },
 ];
 
 export function TopNav() {
+    const { language } = useLanguage();
     const [activeSection, setActiveSection] = useState("");
     const [scrolled, setScrolled] = useState(false);
 
@@ -69,13 +74,13 @@ export function TopNav() {
                         {navLinks.map(({ name, url }) => {
                             const isActive = activeSection === url.substring(1);
                             return (
-                                <li key={name}>
+                                <li key={name.EN}>
                                     <a
                                         href={url}
                                         className={`inline-block text-sm font-mono transition-all duration-300 hover:text-accent hover:scale-105 active:scale-95 ${isActive ? "text-accent" : "text-text-primary"
                                             }`}
                                     >
-                                        {name}
+                                        {name[language]}
                                     </a>
                                 </li>
                             );
@@ -87,7 +92,7 @@ export function TopNav() {
                                 rel="noopener noreferrer"
                                 className="ml-4 inline-block rounded border border-accent px-4 py-2 font-mono text-sm text-accent transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_15px_rgba(100,255,218,0.3)] hover:-translate-y-1 active:translate-y-0 active:scale-95"
                             >
-                                Resume
+                                {language === "DE" ? "Lebenslauf" : "Resume"}
                             </a>
                         </li>
                         <li className="flex items-center gap-2 border-l border-text-secondary/30 pl-4 ml-2">
