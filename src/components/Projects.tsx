@@ -15,7 +15,7 @@ export function Projects() {
             description:
                 "A production-style enterprise system combining ERP operations with a customer-facing e-commerce portal. Built with a scalable, modular backend and secure authentication architecture, demonstrating real-world business workflow design (inventory, orders, billing, user roles).",
             tech: ["Java", "Spring Boot", "React", "PostgreSQL", "Docker", "JWT"],
-            github: "#",
+            github: "https://github.com/rakshith-bs25/TradeFlow",
             external: "#",
             image: "/tradeflow_erp_dashboard.png",
         },
@@ -24,7 +24,7 @@ export function Projects() {
             description:
                 "An AI layer built on top of TradeFlow’s data model that allows users to query ERP data using natural language. Converts human queries into optimized SQL via LLM orchestration, enabling non-technical users to extract business insights instantly.",
             tech: ["Python", "FastAPI", "LangChain", "OpenAI API", "PostgreSQL", "SQL"],
-            github: "#",
+            github: "https://github.com/rakshith-bs25/Smart-ERP-Query-Engine",
             external: "#",
             image: "/Smart ERP Query.png",
         },
@@ -33,7 +33,7 @@ export function Projects() {
             description:
                 "A document processing system that extracts structured data from invoices and project documents using OCR and automated parsing. Designed for university-level enterprise simulation and real-world cost estimation workflows.",
             tech: ["Python", "OCR", "PostgreSQL", "React", "REST APIs"],
-            github: "#",
+            github: "https://github.com/rakshith-bs25/enterprise-cost-estimation-app",
             external: "#",
             image: "/costiq_dashboard_white.png",
         },

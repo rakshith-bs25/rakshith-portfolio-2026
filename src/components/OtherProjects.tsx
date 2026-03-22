@@ -11,46 +11,32 @@ export function OtherProjects() {
 
     const projects = [
         {
-            title: "Integrating Algolia Search with WordPress",
-            description: "Building a custom multisite compatible WordPress plugin to build global search with Algolia",
-            tech: ["Algolia", "WordPress", "PHP"],
-            github: "https://github.com",
-            external: "https://example.com",
+            title: "Mars-Arena-Chess-Engine",
+            description: "A real-time multiplayer chess engine featuring 2-player classical mode and a 3-player hexagonal variant.",
+            tech: ["Java", "Spring Boot", "React", "Docker", "PostgreSQL", "SonarQube"],
+            github: "https://github.com/rakshith-bs25/Mars-Arena-Chess-Engine",
+            external: "",
         },
         {
-            title: "Time to Have More Fun",
-            description: "A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS",
-            tech: ["Next.js", "Tailwind CSS", "Firebase"],
-            github: "https://github.com",
-            external: "https://example.com",
+            title: "portfolio-site",
+            description: "A modern, responsive personal portfolio website built using Next.js, React, Vite, and Tailwind CSS, deployed on Vercel.",
+            tech: ["Next.js", "React", "Vite", "Tailwind CSS"],
+            github: "https://github.com/rakshith-bs25/rakshith-portfolio-2026",
+            external: "https://rakshith-portfolio-2026.vercel.app/",
         },
         {
-            title: "Building a Headless Mobile App CMS",
-            description: "Find out how we built a custom headless CMS with Node, Express, and Firebase for a project.",
-            tech: ["Node", "Express", "Firebase", "Vue"],
-            github: "https://github.com",
-            external: "https://example.com",
+            title: "Online-E-commerce-project",
+            description: "Full-stack e-commerce platform with product catalogue, cart management, and checkout — built with Java backend and JavaScript frontend.",
+            tech: ["Java", "JavaScript", "CSS", "Python"],
+            github: "https://github.com/rakshith-bs25/Online-E-commerce-project",
+            external: "",
         },
         {
-            title: "OctoProfile",
-            description: "A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages.",
-            tech: ["Next.js", "Chart.js", "GitHub API"],
-            github: "https://github.com",
-            external: "https://example.com",
-        },
-        {
-            title: "Google Keep Clone",
-            description: "A simple Google Keep clone built with Vue and Firebase.",
-            tech: ["Vue", "Firebase"],
-            github: "https://github.com",
-            external: "https://example.com",
-        },
-        {
-            title: "Apple Music Embed",
-            description: "Embed an Apple Music player into your website or app. Includes a custom player interface built with Vue.",
-            tech: ["Vue", "Node.js", "Apple Music API"],
-            github: "https://github.com",
-            external: "https://example.com",
+            title: "low-cost-ventilator-project",
+            description: "This project involves the design and development of a low-cost, portable mechanical ventilator aimed at providing respiratory support for patients in critical conditions, especially in limited settings.",
+            tech: ["Arduino", "C++", "Hardware Design"],
+            github: "https://github.com/rakshith-bs25/low-cost-ventilator-project",
+            external: "",
         },
     ];
 
@@ -107,7 +93,7 @@ export function OtherProjects() {
                                         </div>
 
                                         <h3 className="text-xl font-bold text-text-primary mb-3 group-hover:text-accent transition-colors">
-                                            <a href={project.external} target="_blank" rel="noopener noreferrer" className="before:content-[''] before:absolute before:z-0 before:w-full before:h-full before:top-0 before:left-0">
+                                            <a href={project.external || project.github} target="_blank" rel="noopener noreferrer" className="before:content-[''] before:absolute before:z-0 before:w-full before:h-full before:top-0 before:left-0">
                                                 {project.title}
                                             </a>
                                         </h3>

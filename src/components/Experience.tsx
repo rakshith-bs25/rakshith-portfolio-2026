@@ -4,54 +4,93 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "./LanguageProvider";
 
-const jobs = [
-    {
-        company: "Infopine",
-        role: "Associate Software Engineer",
-        date: "Jan 2023 - Feb 2025",
-        description: [
-            "Built scalable Java Spring Boot backend services for a cloud-based ERP platform serving 30+ B2B clients.",
-            "Designed secure REST APIs integrating finance modules with third-party payment gateways.",
-            "Optimized MySQL/PostgreSQL queries, improving performance for high-volume reporting.",
-            "Automated workflows using Python, reducing manual errors by ~40%.",
-            "Developed frontend features using React and consumed REST APIs.",
-            "Worked in Agile/Scrum, contributing to CI/CD with Git, Maven, Jenkins, and Docker.",
-        ],
-    },
-    {
-        company: "Infopine",
-        role: "Trainee Software Engineer",
-        date: "Nov 2021 - Dec 2022",
-        description: [
-            "Implemented backend modules using Spring Boot in a microservices architecture.",
-            "Developed optimized SQL queries for relational databases.",
-            "Practiced TDD and contributed to technical documentation.",
-        ],
-    },
-    {
-        company: "Infopine",
-        role: "Project Intern",
-        date: "Aug 2021 - Nov 2021",
-        description: [
-            "Assisted in backend development using Java and Spring.",
-            "Supported React-based frontend implementation.",
-            "Gained exposure to SDLC and enterprise integration workflows.",
-        ],
-    },
-];
+const jobs = {
+    EN: [
+        {
+            company: "Infopine",
+            role: "Associate Software Engineer",
+            date: "Jan 2023 - Feb 2025",
+            description: [
+                "Built scalable Java Spring Boot backend services for a cloud-based ERP platform serving 30+ B2B clients.",
+                "Designed secure REST APIs integrating finance modules with third-party payment gateways.",
+                "Optimized MySQL/PostgreSQL queries, improving performance for high-volume reporting.",
+                "Automated workflows using Python, reducing manual errors by ~40%.",
+                "Developed frontend features using React and consumed REST APIs.",
+                "Worked in Agile/Scrum, contributing to CI/CD with Git, Maven, Jenkins, and Docker.",
+            ],
+        },
+        {
+            company: "Infopine",
+            role: "Trainee Software Engineer",
+            date: "Nov 2021 - Dec 2022",
+            description: [
+                "Implemented backend modules using Spring Boot in a microservices architecture.",
+                "Developed optimized SQL queries for relational databases.",
+                "Practiced TDD and contributed to technical documentation.",
+            ],
+        },
+        {
+            company: "Infopine",
+            role: "Project Intern",
+            date: "Aug 2021 - Nov 2021",
+            description: [
+                "Assisted in backend development using Java and Spring.",
+                "Supported React-based frontend implementation.",
+                "Gained exposure to SDLC and enterprise integration workflows.",
+            ],
+        },
+    ],
+    DE: [
+        {
+            company: "Infopine",
+            role: "Associate Software Engineer",
+            date: "Jan 2023 - Feb 2025",
+            description: [
+                "Skalierbare Java Spring Boot Backend-Services für eine cloudbasierte ERP-Plattform mit über 30 B2B-Kunden entwickelt.",
+                "Sichere REST-APIs zur Integration von Finanzmodulen mit Drittanbieter-Zahlungsgateways entworfen.",
+                "MySQL/PostgreSQL-Abfragen optimiert und die Performance für datenintensive Reports verbessert.",
+                "Workflows mit Python automatisiert und manuelle Fehler um ca. 40 % reduziert.",
+                "Frontend-Funktionen mit React entwickelt und REST-APIs konsumiert.",
+                "In Agile/Scrum gearbeitet und zu CI/CD mit Git, Maven, Jenkins und Docker beigetragen.",
+            ],
+        },
+        {
+            company: "Infopine",
+            role: "Trainee Software Engineer",
+            date: "Nov 2021 - Dez 2022",
+            description: [
+                "Backend-Module mit Spring Boot in einer Microservices-Architektur implementiert.",
+                "Optimierte SQL-Abfragen für relationale Datenbanken entwickelt.",
+                "TDD praktiziert und zur technischen Dokumentation beigetragen.",
+            ],
+        },
+        {
+            company: "Infopine",
+            role: "Projektpraktikant",
+            date: "Aug 2021 - Nov 2021",
+            description: [
+                "Bei der Backend-Entwicklung mit Java und Spring mitgewirkt.",
+                "React-basierte Frontend-Implementierung unterstützt.",
+                "Einblicke in SDLC und enterprise Integrationsworkflows gewonnen.",
+            ],
+        },
+    ]
+};
 
 export function Experience() {
     const { language } = useLanguage();
     const [activeTab, setActiveTab] = useState(0);
 
+    const currentJobs = language === "DE" ? jobs.DE : jobs.EN;
+
     // Group jobs by company
-    const groupedJobs = jobs.reduce((acc, job) => {
+    const groupedJobs = currentJobs.reduce((acc, job) => {
         if (!acc[job.company]) {
             acc[job.company] = [];
         }
         acc[job.company].push(job);
         return acc;
-    }, {} as Record<string, typeof jobs>);
+    }, {} as Record<string, typeof currentJobs>);
 
     const companies = Object.keys(groupedJobs);
 
