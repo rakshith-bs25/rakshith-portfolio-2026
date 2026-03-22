@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository! This modern, responsive, and highly interactive portfolio is built to showcase my skills, experiences, and projects. 
 
 ## 🌐 Live Demo
-[View Live Portfolio](https://rakshith-bs25.github.io/my-portfolio) *(Update this link to your actual hosted Vercel/Netlify URL if different!)*
+[View Live Portfolio](https://rakshith-portfolio-2026.vercel.app/)
 
 ---
 
@@ -34,8 +34,8 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/rakshith-bs25/my-portfolio.git
-   cd my-portfolio
+   git clone https://github.com/rakshith-bs25/rakshith-portfolio-2026.git
+   cd rakshith-portfolio-2026
    ```
 
 2. **Install dependencies:**
@@ -58,7 +58,7 @@ To run this project locally, follow these steps:
 ---
 
 ## 🤝 Contributing
-Contributions, issues, and feature requests are always welcome! Feel free to check the [issues page](https://github.com/rakshith-bs25/my-portfolio/issues).
+Contributions, issues, and feature requests are always welcome! Feel free to check the [issues page](https://github.com/rakshith-bs25/ rakshith-portfolio-2026/issues).
 
 ## 📝 License
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
