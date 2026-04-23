@@ -8,8 +8,13 @@ const jobs = {
     EN: [
         {
             company: "Infopine",
-            role: "Associate Software Engineer",
-            date: "Jan 2023 - Feb 2025",
+            role: "Software Engineer",
+            date: "Aug 2021 - Feb 2025",
+            roles: [
+                { title: "Associate Software Engineer", date: "Jan 2023 - Feb 2025" },
+                { title: "Trainee Software Engineer", date: "Nov 2021 - Dec 2022" },
+                { title: "Project Intern", date: "Aug 2021 - Nov 2021" },
+            ],
             description: [
                 "Built scalable Java Spring Boot backend services for a cloud-based ERP platform serving 30+ B2B clients.",
                 "Designed secure REST APIs integrating finance modules with third-party payment gateways.",
@@ -17,34 +22,20 @@ const jobs = {
                 "Automated workflows using Python, reducing manual errors by ~40%.",
                 "Developed frontend features using React and consumed REST APIs.",
                 "Worked in Agile/Scrum, contributing to CI/CD with Git, Maven, Jenkins, and Docker.",
-            ],
-        },
-        {
-            company: "Infopine",
-            role: "Trainee Software Engineer",
-            date: "Nov 2021 - Dec 2022",
-            description: [
-                "Implemented backend modules using Spring Boot in a microservices architecture.",
-                "Developed optimized SQL queries for relational databases.",
-                "Practiced TDD and contributed to technical documentation.",
-            ],
-        },
-        {
-            company: "Infopine",
-            role: "Project Intern",
-            date: "Aug 2021 - Nov 2021",
-            description: [
-                "Assisted in backend development using Java and Spring.",
-                "Supported React-based frontend implementation.",
-                "Gained exposure to SDLC and enterprise integration workflows.",
+                "Practiced TDD and contributed to technical documentation."
             ],
         },
     ],
     DE: [
         {
             company: "Infopine",
-            role: "Associate Software Engineer",
-            date: "Jan 2023 - Feb 2025",
+            role: "Software Engineer",
+            date: "Aug 2021 - Feb 2025",
+            roles: [
+                { title: "Associate Software Engineer", date: "Jan 2023 - Feb 2025" },
+                { title: "Trainee Software Engineer", date: "Nov 2021 - Dez 2022" },
+                { title: "Projektpraktikant", date: "Aug 2021 - Nov 2021" },
+            ],
             description: [
                 "Skalierbare Java Spring Boot Backend-Services für eine cloudbasierte ERP-Plattform mit über 30 B2B-Kunden entwickelt.",
                 "Sichere REST-APIs zur Integration von Finanzmodulen mit Drittanbieter-Zahlungsgateways entworfen.",
@@ -52,26 +43,7 @@ const jobs = {
                 "Workflows mit Python automatisiert und manuelle Fehler um ca. 40 % reduziert.",
                 "Frontend-Funktionen mit React entwickelt und REST-APIs konsumiert.",
                 "In Agile/Scrum gearbeitet und zu CI/CD mit Git, Maven, Jenkins und Docker beigetragen.",
-            ],
-        },
-        {
-            company: "Infopine",
-            role: "Trainee Software Engineer",
-            date: "Nov 2021 - Dez 2022",
-            description: [
-                "Backend-Module mit Spring Boot in einer Microservices-Architektur implementiert.",
-                "Optimierte SQL-Abfragen für relationale Datenbanken entwickelt.",
-                "TDD praktiziert und zur technischen Dokumentation beigetragen.",
-            ],
-        },
-        {
-            company: "Infopine",
-            role: "Projektpraktikant",
-            date: "Aug 2021 - Nov 2021",
-            description: [
-                "Bei der Backend-Entwicklung mit Java und Spring mitgewirkt.",
-                "React-basierte Frontend-Implementierung unterstützt.",
-                "Einblicke in SDLC und enterprise Integrationsworkflows gewonnen.",
+                "TDD praktiziert und zur technischen Dokumentation beigetragen."
             ],
         },
     ]
@@ -140,23 +112,31 @@ export function Experience() {
                             >
                                 {activeRoles.map((roleData, index) => {
                                     const isLatest = index === 0;
-                                    const isLast = index === activeRoles.length - 1;
 
                                     return (
-                                        <div key={index} className={`relative ${!isLast ? "pb-12" : ""}`}>
+                                        <div key={index} className="relative">
                                             {/* Simplified continuous timeline border */}
-                                            <div className={`md:pl-6 relative border-l-2 border-text-secondary/20 hover:border-accent transition-colors duration-300 ml-[1px]`}>
-                                                <h3 className={`text-xl font-medium mb-1 ${isLatest ? "text-accent" : "text-text-primary"}`}>
+                                            <div className="md:pl-6 relative border-l-2 border-text-secondary/20 hover:border-accent transition-colors duration-300 ml-[1px]">
+                                                <h3 className="text-xl font-medium mb-2 text-text-primary">
                                                     {roleData.role}
-                                                    {isLatest && (
-                                                        <span className="text-accent">
-                                                            {" "}@ {roleData.company}
-                                                        </span>
-                                                    )}
+                                                    <span className="text-accent">
+                                                        {" "}@ {roleData.company}
+                                                    </span>
                                                 </h3>
-                                                <p className="text-sm font-mono text-text-secondary mb-4">
-                                                    {roleData.date}
-                                                </p>
+                                                {roleData.roles ? (
+                                                    <div className="mb-6 flex flex-col gap-1.5">
+                                                        {roleData.roles.map((r, i) => (
+                                                            <div key={i} className="flex flex-col sm:flex-row sm:items-center text-sm font-mono text-text-secondary">
+                                                                <span className="text-text-primary/90 mr-3">{r.title}</span>
+                                                                <span className="text-xs opacity-70 mt-1 sm:mt-0">{r.date}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                ) : (
+                                                    <p className="text-sm font-mono text-text-secondary mb-4">
+                                                        {roleData.date}
+                                                    </p>
+                                                )}
                                                 <ul className="space-y-3 text-text-secondary">
                                                     {roleData.description.map((desc, i) => (
                                                         <li key={i} className="flex gap-2">

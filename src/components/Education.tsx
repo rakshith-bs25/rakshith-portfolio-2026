@@ -32,7 +32,7 @@ export function Education() {
                             Otto von Guericke University Magdeburg <span className="text-text-secondary/70">— Magdeburg, Germany</span>
                         </div>
                         <p className="text-sm font-mono text-text-secondary mb-4">
-                            Apr 2023 – Present
+                            Apr 2025 – Present
                         </p>
 
                         <div className="text-text-secondary mt-4">

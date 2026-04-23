@@ -31,8 +31,8 @@ export function Projects() {
         {
             title: "Enterprise Cost Estimation App",
             description:
-                "A document processing system that extracts structured data from invoices and project documents using OCR and automated parsing. Designed for university-level enterprise simulation and real-world cost estimation workflows.",
-            tech: ["Python", "OCR", "PostgreSQL", "React", "REST APIs"],
+                "A desktop cost estimation platform built for a real German welding and fabrication client. Features a KPI dashboard, quote generation (Angebot), activity logging, and PDF export with a full UI/UX redesign focused on operational clarity for non-technical users.",
+            tech: ["Electron", "React", "TypeScript", "PostgreSQL", "oRPC", "Kysely"],
             github: "https://github.com/rakshith-bs25/enterprise-cost-estimation-app",
             external: "#",
             image: "/costiq_dashboard_white.png",
