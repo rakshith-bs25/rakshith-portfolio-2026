@@ -111,7 +111,7 @@ export function Experience() {
                                 transition={{ duration: 0.25 }}
                             >
                                 {activeRoles.map((roleData, index) => {
-                                    const isLatest = index === 0;
+
 
                                     return (
                                         <div key={index} className="relative">

@@ -36,7 +36,7 @@ export function Loader({ finishLoading }: { finishLoading: () => void }) {
 
     useEffect(() => {
         setIsMounted(true);
-        let timeouts: NodeJS.Timeout[] = [];
+        const timeouts: NodeJS.Timeout[] = [];
 
         terminalStream.forEach((log, index) => {
             // Predictably imperfect. Constrained jitter avoids "simulation pattern" bounds.
@@ -67,7 +67,7 @@ export function Loader({ finishLoading }: { finishLoading: () => void }) {
 
                     return (
                         <div key={index} className="mb-1 flex items-center">
-                            <span 
+                            <span
                                 className={`mr-3 pr-2 border-r border-text-secondary/20 inline-block w-[45px] text-right ${isAuth ? 'text-accent opacity-90 font-bold tracking-widest' : 'opacity-40'}`}
                             >
                                 {line.namespace}
@@ -78,7 +78,7 @@ export function Loader({ finishLoading }: { finishLoading: () => void }) {
                             <span className={isAuth ? 'text-text-primary' : 'text-text-secondary/90'}>
                                 {line.text}
                             </span>
-                            
+
                             {/* Single active cursor parked on the final processed line during idle holds and crossfade */}
                             {isLast && (
                                 <motion.span
