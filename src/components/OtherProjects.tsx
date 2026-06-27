@@ -11,6 +11,20 @@ export function OtherProjects() {
 
     const projects = [
         {
+            title: "Smart ERP Query Engine",
+            description: "An AI layer built on top of TradeFlow’s data model that allows users to query ERP data using natural language. Converts human queries into optimized SQL via LLM orchestration, enabling non-technical users to extract business insights instantly.",
+            tech: ["Python", "FastAPI", "LangChain", "OpenAI API", "PostgreSQL", "SQL"],
+            github: "https://github.com/rakshith-bs25/Smart-ERP-Query-Engine",
+            external: "",
+        },
+        {
+            title: "Multi-Ship Trajectory & Radar Simulation",
+            description: "Developing a multi-ship maritime trajectory simulation for OvGU's Applied Maritime Simulation lab using the MMG physics model.",
+            tech: ["Python", "Streamlit"],
+            github: "",
+            external: "",
+        },
+        {
             title: "Mars-Arena-Chess-Engine",
             description: "A real-time multiplayer chess engine featuring 2-player classical mode and a 3-player hexagonal variant.",
             tech: ["Java", "Spring Boot", "React", "Docker", "PostgreSQL", "SonarQube"],

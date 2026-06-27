@@ -20,18 +20,18 @@ export function Projects() {
             image: "/tradeflow_erp_dashboard.png",
         },
         {
-            title: "Smart ERP Query Engine",
+            title: "Newborn Weight Prediction System",
             description:
-                "An AI layer built on top of TradeFlow’s data model that allows users to query ERP data using natural language. Converts human queries into optimized SQL via LLM orchestration, enabling non-technical users to extract business insights instantly.",
-            tech: ["Python", "FastAPI", "LangChain", "OpenAI API", "PostgreSQL", "SQL"],
-            github: "https://github.com/rakshith-bs25/Smart-ERP-Query-Engine",
+                "Building an end-to-end MLOps pipeline for newborn birth weight prediction using a large-scale medical dataset. Implementing data preprocessing, feature engineering, model training, experiment tracking, model versioning, and containerized deployment using Docker. The goal is to develop a scalable, reproducible, and production-ready machine learning system.",
+            tech: ["Machine Learning", "MLOps", "MLflow", "FastAPI", "Python"],
+            github: "https://github.com/Avijeettelkar1/stp-natality",
             external: "#",
-            image: "/Smart ERP Query.png",
+            image: "/MLops.png",
         },
         {
-            title: "Enterprise Cost Estimation App",
+            title: "CostIQ",
             description:
-                "A desktop cost estimation platform built for a real German welding and fabrication client. Features a KPI dashboard, quote generation (Angebot), activity logging, and PDF export with a full UI/UX redesign focused on operational clarity for non-technical users.",
+                "An AI-Powered cost estimation desktop app built for a German industrial client, integrating OpenAI API and OCR to automatically extract and process data from technical documents. Features a KPI dashboard, quote generation, activity logging, and PDF export, with a UI/UX designed for non-technical users.",
             tech: ["Electron", "React", "TypeScript", "PostgreSQL", "oRPC", "Kysely"],
             github: "https://github.com/rakshith-bs25/enterprise-cost-estimation-app",
             external: "#",

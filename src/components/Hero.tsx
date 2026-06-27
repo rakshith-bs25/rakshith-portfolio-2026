@@ -24,8 +24,8 @@ export function Hero() {
                     </h2>
                     <p className="mb-12 max-w-xl text-base text-text-secondary md:text-lg mx-auto lg:mx-0">
                         {language === "DE"
-                            ? "Erfahrener Java- & Python-Entwickler mit Fokus auf skalierbare ERP- und E-Commerce-Lösungen. Als M.Sc. Student für Digital Engineering in Magdeburg verbinde ich fundierte Backend-Expertise mit innovativen KI-Technologien für die Industrie von morgen."
-                            : "Java & Python backend developer with 3.5+ years building ERP and e-commerce platforms. Currently pursuing M.Sc. Digital Engineering at Otto-von-Guericke-Universität Magdeburg — focused on integrating intelligent features into real business applications."}
+                            ? "Erfahrener Java- & Python-Entwickler mit Fokus auf skalierbare ERP- und E-Commerce-Lösungen. Basierend in Frankfurt am Main absolviere ich meinen M.Sc. in Digital Engineering an der Universität Magdeburg und verbinde fundierte Backend-Expertise mit innovativen KI-Technologien für die Industrie von morgen."
+                            : "Java & Python backend developer with 3.5+ years building ERP and e-commerce platforms. Based in Frankfurt am Main, I am pursuing my M.Sc. in Digital Engineering at Otto-von-Guericke-Universität Magdeburg, focused on integrating intelligent features into real business applications."}
                     </p>
                     <div className="flex gap-4 lg:justify-start justify-center">
                         <a
