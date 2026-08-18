@@ -7,8 +7,23 @@ import { useLanguage } from "./LanguageProvider";
 const jobs = {
     EN: [
         {
+            company: "LabThunder",
+            role: "Software Development Engineer in Test",
+            url: "https://www.labthunder.com/",
+            date: "Aug 2026 - Present",
+            roles: [
+                { title: "Part-time / Working Student", date: "Aug 2026 - Present" },
+            ],
+            description: [
+                "Designed and executed end-to-end testing procedures across the SaaS ERP and Thunder AI platforms, ensuring system stability, performance, and data accuracy.",
+                "Translated business requirements into technical user stories, acceptance criteria, and system flow diagrams to guide development sprints.",
+                "Authored technical documentation and API specifications, collaborating closely with cross-functional Agile/Scrum teams to triage bugs and validate releases."
+            ],
+        },
+        {
             company: "Infopine",
             role: "Software Engineer",
+            url: "https://infopine.com/",
             date: "Aug 2021 - Feb 2025",
             roles: [
                 { title: "Associate Software Engineer", date: "Jan 2023 - Feb 2025" },
@@ -28,8 +43,23 @@ const jobs = {
     ],
     DE: [
         {
+            company: "LabThunder",
+            role: "Software Development Engineer in Test",
+            url: "https://www.labthunder.com/",
+            date: "Aug 2026 - Heute",
+            roles: [
+                { title: "Teilzeit / Werkstudent", date: "Aug 2026 - Heute" },
+            ],
+            description: [
+                "Entwicklung und Durchführung von End-to-End-Testverfahren für die SaaS-ERP- und Thunder-AI-Plattformen zur Gewährleistung von Systemstabilität, Leistung und Datengenauigkeit.",
+                "Übersetzung von Geschäftsanforderungen in technische User Stories, Akzeptanzkriterien und Systemablaufdiagramme zur Steuerung von Entwicklungs-Sprints.",
+                "Erstellung technischer Dokumentationen und API-Spezifikationen in enger Zusammenarbeit mit funktionsübergreifenden Agile/Scrum-Teams zur Fehlerbehebung und Validierung von Releases."
+            ],
+        },
+        {
             company: "Infopine",
             role: "Software Engineer",
+            url: "https://infopine.com/",
             date: "Aug 2021 - Feb 2025",
             roles: [
                 { title: "Associate Software Engineer", date: "Jan 2023 - Feb 2025" },
@@ -120,7 +150,14 @@ export function Experience() {
                                                 <h3 className="text-xl font-medium mb-2 text-text-primary">
                                                     {roleData.role}
                                                     <span className="text-accent">
-                                                        {" "}@ {roleData.company}
+                                                        {" "}@{" "}
+                                                        {roleData.url ? (
+                                                            <a href={roleData.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                                                {roleData.company}
+                                                            </a>
+                                                        ) : (
+                                                            roleData.company
+                                                        )}
                                                     </span>
                                                 </h3>
                                                 {roleData.roles ? (

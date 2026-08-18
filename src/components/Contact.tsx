@@ -39,7 +39,7 @@ export function Contact() {
                 <a href="https://github.com/rakshith-bs25" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1">
                     <span>{language === "DE" ? "Design & Entwicklung: Rakshith" : "Designed & Engineered by Rakshith"}</span>
                     <span>{language === "DE" ? "Erstellt mit Next.js, Tailwind CSS & Framer Motion" : "Built with Next.js, Tailwind CSS & Framer Motion"}</span>
-                    <span className="mt-2 text-xs opacity-75">&copy; 2026 | Frankfurt am Main, Germany</span>
+                    <span className="mt-2 text-xs opacity-75">&copy; 2026 | Magdeburg, Germany</span>
                 </a>
             </div>
         </section>

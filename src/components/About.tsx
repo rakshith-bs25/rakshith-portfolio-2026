@@ -10,27 +10,27 @@ export function About() {
     const skillCategories = [
         {
             title: "Backend",
-            skills: ["Java", "Spring Boot", "JPA/Hibernate", "REST APIs", "Microservices", "JWT"],
+            skills: ["Java", "Spring Boot", "TypeScript", "Node.js", "REST APIs", "Microservices"],
         },
         {
             title: "Frontend",
-            skills: ["React", "Next.js", "JavaScript (ES6+)", "HTML5", "CSS3"],
+            skills: ["React", "Next.js", "JavaScript (ES6+)", "HTML5/CSS3"],
         },
         {
             title: "Database",
-            skills: ["PostgreSQL", "MySQL", "Data Modeling"],
+            skills: ["PostgreSQL", "MySQL", "Prisma ORM", "JPA/Hibernate"],
         },
         {
-            title: "AI/Data",
-            skills: ["Python", "FastAPI", "Pandas", "NumPy", "LLM Integration"],
+            title: "AI & Data",
+            skills: ["Python", "FastAPI", "LLM / RAG Integration", "Pandas", "NumPy"],
         },
         {
-            title: "DevOps",
-            skills: ["Docker", "Git", "CI/CD", "Linux"],
+            title: "DevOps & Quality",
+            skills: ["Docker", "Git", "CI/CD (GitHub Actions)", "Playwright", "API Testing"],
         },
         {
             title: "Architecture",
-            skills: ["Modular Design", "RESTful Systems", "Schema Design", "API Integration"],
+            skills: ["System Design", "Modular Architecture", "Schema Design", "API Integration"],
         },
     ];
 
@@ -54,18 +54,18 @@ export function About() {
                     <div className="lg:w-1/2 text-text-secondary space-y-6 text-lg leading-relaxed">
                         <p>
                             {language === "DE"
-                                ? <>Ich bin Rakshith, Softwareentwickler mit 3,5 Jahren Erfahrung in der Entwicklung von <span className="text-accent">ERP-Systemen</span> innerhalb eines Produktunternehmens. Anstatt bestehende Plattformen lediglich zu konfigurieren, habe ich eigenständig Module entworfen, Backend-Services entwickelt und Full-Stack-Systeme bereitgestellt, die täglich von über 30 Geschäftskunden aus den Bereichen <span className="text-accent">Einzelhandel und Vertrieb in Indien und den USA</span> genutzt werden.</>
-                                : <>I&apos;m Rakshith, a software developer with 3.5 years of experience building <span className="text-accent">ERP systems</span> within a product company. Rather than configuring existing platforms, I&apos;ve designed modules, developed backend services, and deployed full-stack systems used daily by 30+ business clients across <span className="text-accent">retail and distribution in India and the US.</span></>}
+                                ? <>Ich bin Rakshith, ein Software Engineer mit 3,5+ Jahren Erfahrung in der Skalierung produktionsreifer <span className="text-accent">ERP-Plattformen</span>. Statt Standardsoftware zu konfigurieren, entwickle ich Kernmodule, resiliente Backend-Services und Full-Stack-Systeme, die täglich von über 30 Unternehmenskunden in Indien und den USA genutzt werden.</>
+                                : <>I&apos;m Rakshith, a software engineer with 3.5+ years of experience architecting and scaling production <span className="text-accent">ERP platforms</span>. Rather than configuring existing software, I&apos;ve designed core modules, built resilient backend services, and deployed full-stack systems used daily by 30+ enterprise clients across retail and distribution in India and the US.</>}
                         </p>
                         <p>
                             {language === "DE"
-                                ? <>Durch die enge Zusammenarbeit mit Stakeholdern aus den Bereichen Operations, Finanzen und Supply Chain habe ich gelernt, dass Software nur dann einen echten Mehrwert bietet, wenn sie reale Geschäftsprozesse verbessert. Meine Spezialität liegt darin, unstrukturierte Anforderungen in <span className="text-accent">strukturierte technische Lösungen</span> zu übersetzen, von komplexen Workflows bis hin zu operativen Dashboards, die die Entscheidungsfindung unterstützen.</>
-                                : <>Working closely with operations, finance, and supply chain stakeholders taught me that software only delivers value when it improves real business processes. I specialize in translating unstructured requirements into <span className="text-accent">structured technical solutions</span>, from complex workflows to operational dashboards that drive decision-making.</>}
+                                ? <>Die enge Zusammenarbeit mit Operations, Finanzen und Supply Chain hat mir gezeigt: Code liefert nur Mehrwert, wenn er echte Geschäftsengpässe löst. Ich übersetze komplexe Anforderungen in <span className="text-accent">robuste Architekturen</span> – von automatisierten Daten-Workflows bis zu performanten Dashboards für strategische Entscheidungen.</>
+                                : <>Collaborating closely with operations, finance, and supply chain stakeholders taught me that code delivers value when it solves real business bottlenecks. I specialize in translating complex business requirements into <span className="text-accent">robust technical architectures</span>, from automated data workflows to high-performance operational dashboards that empower strategic decision-making.</>}
                         </p>
                         <p>
                             {language === "DE"
-                                ? <>Derzeit lebe ich in Frankfurt am Main und absolviere meinen Master in Digital Engineering an der Universität Magdeburg. Mein Fokus liegt dabei auf der Integration von <span className="text-accent">KI in Unternehmenssysteme</span>, um Prognosen und Automatisierung zu optimieren. Außerhalb der Arbeit vertiefe ich mich meist in Side-Projekte, erkunde das Java- und Python-Ökosystem oder finde kreative Wege, um komplexe geschäftliche Herausforderungen zu lösen.</>
-                                : <>Currently based in Frankfurt am Main while pursuing a Master&apos;s in Digital Engineering at Magdeburg University, I&apos;m focused on integrating <span className="text-accent">AI into enterprise systems</span> to enhance forecasting and automation. Outside of work, I&apos;m usually deep in side projects, exploring the Java and Python ecosystems, or finding creative ways to solve complex business problems.</>}
+                                ? <>Aktuell lebe ich in Magdeburg, studiere im M.Sc. Digital Engineering an der OvGU und fokussiere mich auf die Integration von <span className="text-accent">KI-Pipelines in Enterprise-Architekturen</span>. In meiner Freizeit baue ich Side-Projects, erkunde moderne Java- und TypeScript-Ökosysteme oder löse komplexe Systemdesign-Challenges.</>
+                                : <>Based in Magdeburg, Germany, while pursuing my M.Sc. in Digital Engineering at Otto-von-Guericke University, I focus on integrating <span className="text-accent">AI pipelines into enterprise architectures</span> to accelerate intelligent automation. Outside of work, I enjoy building technical side projects, exploring the modern Java and TypeScript ecosystems, or solving intricate system design challenges.</>}
                         </p>
                     </div>
 

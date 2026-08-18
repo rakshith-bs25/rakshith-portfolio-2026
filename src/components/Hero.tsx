@@ -24,8 +24,8 @@ export function Hero() {
                     </h2>
                     <p className="mb-12 max-w-xl text-base text-text-secondary md:text-lg mx-auto lg:mx-0">
                         {language === "DE"
-                            ? "Erfahrener Java- & Python-Entwickler mit Fokus auf skalierbare ERP- und E-Commerce-Lösungen. Basierend in Frankfurt am Main absolviere ich meinen M.Sc. in Digital Engineering an der Universität Magdeburg und verbinde fundierte Backend-Expertise mit innovativen KI-Technologien für die Industrie von morgen."
-                            : "Java & Python backend developer with 3.5+ years building ERP and e-commerce platforms. Based in Frankfurt am Main, I am pursuing my M.Sc. in Digital Engineering at Otto-von-Guericke-Universität Magdeburg, focused on integrating intelligent features into real business applications."}
+                            ? "Full-Stack & Backend Engineer mit 3,5+ Jahren Erfahrung in der Entwicklung produktionsreifer ERP-Plattformen und intelligenter Workflows in Java, TypeScript und Python. Ansässig in Deutschland und Masterstudent (M.Sc.) im Bereich Digital Engineering an der Otto-von-Guericke-Universität Magdeburg."
+                            : "Full-Stack & Backend Engineer with 3.5+ years of experience building production ERP platforms and intelligent workflows across Java, TypeScript, and Python. Based in Germany, pursuing an M.Sc. in Digital Engineering at Otto-von-Guericke-Universität Magdeburg."}
                     </p>
                     <div className="flex gap-4 lg:justify-start justify-center">
                         <a
@@ -52,7 +52,7 @@ export function Hero() {
                             alt="Rakshith - Profile Picture"
                             fill
                             sizes="(max-width: 768px) 256px, 320px"
-                            className="object-cover object-center"
+                            className="object-cover object-top"
                             priority
                         />
                     </div>
