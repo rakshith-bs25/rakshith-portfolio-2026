@@ -28,7 +28,9 @@ export function Contact() {
                 </p>
 
                 <a
-                    href="mailto:rakshith.bs25@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rakshith.bs25@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block rounded border border-accent bg-transparent px-8 py-4 font-mono text-sm text-accent transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_15px_rgba(100,255,218,0.3)] hover:-translate-y-1 active:translate-y-0 active:scale-95"
                 >
                     {language === "DE" ? "Sag Hallo / Kontaktieren" : "Say Hello"}
